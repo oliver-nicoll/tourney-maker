@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EventList = (props) => {
+const EventList = () => {
 
     const [list, setList] = useState([])
 // item
