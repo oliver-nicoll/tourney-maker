@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Home from './Components/Home/Home';
-import About from './Components/About/About';
-import Tournaments from './Components/Tournaments/Tournaments';
-import Teams from './Components/Teams/Teams';
-import ScoreBoard from './Components/ScoreBoard/ScoreBoard'
+import About from '../about/About';
+import Tournaments from '../tournaments/Tournaments';
+import TeamForm from '../teams/TeamForm';
+import ScoreBoard from '../scoreboard/ScoreBoard';
+import Home from '../home/Home';
 
 const Pages = () => {
-    const [page, setPage] = useState('about')
+    const [page, setPage] = useState("about")
 
     const renderPage = () => {
         switch (page) {
@@ -18,7 +18,7 @@ const Pages = () => {
                 return <Tournaments />;
             case "teams":
             
-                return <Teams />;
+                return <TeamForm />;
             case "scoreboard":
             
                 return <ScoreBoard />;

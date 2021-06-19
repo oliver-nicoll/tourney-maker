@@ -29,3 +29,5 @@ const TeamForm = () => {
         </div>
     )
 }
+
+export default TeamForm

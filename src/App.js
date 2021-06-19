@@ -1,20 +1,15 @@
 import TourneyMaker from './Design/TourneyMaker.svg';
 import './App.css';
-import EventList from './Components/EventList/EventList';
-import Mode from "./Components/Mode/Mode";
-import ScoreBoard from './Components/ScoreBoard/ScoreBoard';
+import Pages from './Components/Pages/Pages'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={TourneyMaker} className="App-logo" alt="logo" />
+        < Pages />
       </header>
-      < Mode />
-      < ScoreBoard />
-      < ScoreBoard />
-
-      < EventList />
+      
     </div>
   );
 }
