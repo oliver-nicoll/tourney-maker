@@ -27,6 +27,7 @@ const Pages = () => {
                 return <Home />;
         }
     }
+    
 
     return (
         <div>
