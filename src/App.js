@@ -1,7 +1,7 @@
 import TourneyMaker from './Design/TourneyMaker.svg';
 import './App.css';
-import EventList from './Components/EventList';
-import Mode from "./Components/Mode";
+import EventList from './Components/EventList/EventList';
+import Mode from "./Components/Mode/Mode";
 import ScoreBoard from './Components/ScoreBoard/ScoreBoard';
 
 function App() {

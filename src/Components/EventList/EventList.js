@@ -20,7 +20,7 @@ const EventList = (props) => {
 
 
     return (
-        <div className="left">
+        <div className="main">
             <h3>Events:</h3>
             <ul>
                 {list.map((tournamentEvent, i) => <li key={i}>{tournamentEvent}</li>)}

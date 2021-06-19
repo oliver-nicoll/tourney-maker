@@ -13,7 +13,7 @@ const ScoreBoard = () => {
 
     return (
         <>
-            <div>
+            <div className="score-board">
                 <h4> Team Score: { total }</h4>
                 <div>
                     <button onClick={addToTotal} data-add="1"> + 1</button>
