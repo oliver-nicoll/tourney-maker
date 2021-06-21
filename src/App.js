@@ -17,7 +17,7 @@ function App() {
             <div>
               <Route exact path="/" component={ Home } />
               <Route exact path="/about" component={ About } />
-              <Route exact path="/new-team" component={ TeamForm } />
+              <Route exact path="/teams" component={ TeamForm } />
               <Route exact path="/tournaments" component={ Tournaments } />
               <Route exact path="/scorekeeper" component={ ScoreBoard } />
             </div>
