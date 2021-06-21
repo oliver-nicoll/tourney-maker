@@ -1,7 +1,8 @@
 import TourneyMaker from './Design/TourneyMaker.svg';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Pages from './Components/Pages/Pages'
+import Pages from './Components/Pages/Pages';
+import NavBar from './Components/NavBar/NavBar'
 import Home from './Components/home/Home';
 import TeamForm from './Components/teams/TeamForm';
 import ScoreBoard from './Components/scoreboard/ScoreBoard';
@@ -22,7 +23,7 @@ function App() {
               <Route exact path="/scorekeeper" component={ ScoreBoard } />
             </div>
           </Router>
-        < Pages />
+        <NavBar />
       </header>
       
     </div>
