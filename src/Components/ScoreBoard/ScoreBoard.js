@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../scoreboard/ScoreBoard.css"
 
 const ScoreBoard = () => {
     const [total, setTotal] = useState(0)

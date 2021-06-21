@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import "../tournaments/Tournaments.css"
 
 const Tournaments = () => {
 
     const [list, setList] = useState([])
     
     const [tournamentEvent, setTournamentEvent] = useState("")
+
+
+    useEffect(() => {
+        setList(prevList => prevList )
+    }, [])
 
     let addToList = (e) => {
         e.preventDefault()

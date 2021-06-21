@@ -1,4 +1,3 @@
-import TourneyMaker from './Design/TourneyMaker.svg';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Pages from './Components/Pages/Pages';
@@ -12,11 +11,8 @@ import About from './Components/about/About'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={TourneyMaker} className="App-logo" alt="logo" />
-          <Router>
+       <Router>
             <div>
-              <Route exact path="/" component={ Home } />
               <Route exact path="/about" component={ About } />
               <Route exact path="/teams" component={ TeamForm } />
               <Route exact path="/tournaments" component={ Tournaments } />
@@ -24,8 +20,8 @@ function App() {
             </div>
           </Router>
         <NavBar />
-      </header>
-      
+      <Home />
+      <Pages />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "../teams/TeamForm.css"
 
 const TeamForm = () => {
    const [teams, setTeams] = useState([])

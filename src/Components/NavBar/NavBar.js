@@ -1,12 +1,13 @@
 import React from 'react'
 import SearchIcon from '@material-ui/icons/Search';
-import '../NavBar/NavBar.css'
+import '../NavBar/NavBar.css';
+
 
 
 const NavBar = () => {
     return (
         <div className="navbar">
-            <img className="navbar-logo" src='../Design/TourneyMaker.svg' />
+            <img src='../logo/logomaker.svg' className="navbar-logo" alt="logo" />
             <div className="navbar-search">
                 <input className="navbar-searchInput" type="text" />
                 <SearchIcon className="navbar-searchIcon" />
@@ -23,25 +24,25 @@ const NavBar = () => {
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
-                        About
+                        
                     </span>
                     <span className="navbar-optionLineTwo">
-                        Us
+                       About Us
                     </span>
                 </div>
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
-                        Tournaments
+                        
                     </span>
                     <span className="navbar-optionLineTwo">
-                         Events
+                        Tournaments & Events
                     </span>
                 </div>
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
-                        Team
+                       
                     </span>
                     <span className="navbar-optionLineTwo">
                         Score-Board
