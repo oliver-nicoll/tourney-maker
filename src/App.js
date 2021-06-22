@@ -1,4 +1,5 @@
 import './App.css';
+import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Pages from './Components/Pages/Pages';
 import NavBar from './Components/NavBar/NavBar'
@@ -9,6 +10,11 @@ import Tournaments from './Components/tournaments/Tournaments';
 import About from './Components/about/About'
 
 function App() {
+
+  const state = useSelector((state) => state.keyTestReducer)
+
+  console.log(state)
+
   return (
     <div className="App">
        <Router>
