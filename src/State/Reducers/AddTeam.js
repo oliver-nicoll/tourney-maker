@@ -1,12 +1,12 @@
-const Reducer = (state = 0, action) => {
+const addTeam = (state = 0, action) => {
     switch (action.type) {
-        case "add_team":
+        case "ADD_TEAM":
             return state + action.payload;
-        case "remove_team":
+        case "REMOVE_TEAM":
             return state - action.payload;
         default:
             return state
     }
 };
 
-export default Reducer;
+export default addTeam;

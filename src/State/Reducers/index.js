@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import testReducer from "./testReducer";
-import testtwo from "./testtwo";
+import AddTeam from "./AddTeam";
+import AddEvent from "./AddEvent";
 
 const reducers = combineReducers({
-    key: testReducer
-});
+    keyAddTeam: AddTeam,
+    keyAddEvent: AddEvent});
 
 export default reducers;
