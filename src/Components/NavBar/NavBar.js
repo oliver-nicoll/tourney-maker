@@ -1,10 +1,16 @@
 import React from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 import '../NavBar/NavBar.css';
+import { NavLink } from 'react-router-dom';
+// import { withRouter  } from 'react-router-dom';
 
 
+const NavBar = (props) => {
 
-const NavBar = () => {
+
+    console.log(props)
+
+    
     return (
         <div className="navbar">
             <img src='../logo/logomaker.svg' className="navbar-logo" alt="logo" />
@@ -17,36 +23,57 @@ const NavBar = () => {
                     <span className="navbar-optionLineOne">
                         Hello Guest
                     </span>
-                    <span className="navbar-optionLineTwo">
+                    <NavLink 
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "white"
+                    }} 
+                    to="/login" 
+                    className="navbar-optionLineTwo">
                         Sign In
-                    </span>
+                    </NavLink >
                 </div>
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
                         
                     </span>
-                    <span className="navbar-optionLineTwo">
+                    <NavLink activeStyle={{
+                        fontWeight: "bold",
+                        color: "white"
+                    }} 
+                    to="/about" 
+                    className="navbar-optionLineTwo" >
                        About Us
-                    </span>
+                    </NavLink>
                 </div>
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
                         
                     </span>
-                    <span className="navbar-optionLineTwo">
+                    <NavLink activeStyle={{
+                        fontWeight: "bold",
+                        color: "white"
+                    }} 
+                    to="/events" 
+                    className="navbar-optionLineTwo">
                         Tournaments & Events
-                    </span>
+                    </NavLink>
                 </div>
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
                        
                     </span>
-                    <span className="navbar-optionLineTwo">
+                    <NavLink activeStyle={{
+                        fontWeight: "bold",
+                        color: "white"
+                    }} 
+                    to="/scoreboard" 
+                    className="navbar-optionLineTwo">
                         Score-Board
-                    </span>
+                    </NavLink >
                 </div>
                 
             </div>
@@ -54,4 +81,6 @@ const NavBar = () => {
     )
 }
 
-export default NavBar
+// export default withRouter(NavBar);
+
+export default NavBar;
