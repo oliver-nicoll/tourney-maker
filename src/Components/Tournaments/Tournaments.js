@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchTournaments } from '../../Redux/tournamentSlice';
+import { fetchTournaments, addTournament } from '../../Redux/tournamentSlice';
 
 import "../tournaments/Tournaments.css"
 
@@ -38,7 +38,7 @@ const Tournaments = () => {
     }
     
     const handleChange = (e) => {
-        setTournamentEvent(e.target.value)
+        setNewTournamentEvent(e.target.value)
     }
 
 

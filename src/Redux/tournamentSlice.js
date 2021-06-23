@@ -9,6 +9,22 @@ export const fetchTournaments = createAsyncThunk(
     }
 )
 
+export const addTournament = createAsyncThunk(
+    'tournaments/addTournament', 
+    async (tournament) => {
+        const resp = await fetch('http://localhost:3000/api/v1/tournaments',  {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(tournament)
+        })
+        const newTournamentData = await resp.json()
+        return newTournamentData
+    }
+)
+
 export const tournamentsSlice = createSlice({
     name: 'tournaments',
     initialState: {
