@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment, selectCount } from '../../Redux/counter';
 import "../scoreboard/ScoreBoard.css"
 
 const ScoreBoard = () => {
-    const [total, setTotal] = useState(0)
 
-    const addToTotal = (e) => {
-        setTotal(prevTotal => prevTotal + parseInt(e.target.dataset.add))
-    }
+    const count = useSelector(selectCount)
 
-    const subtractFromTotal = (e) => {
-        setTotal(prevTotal => prevTotal - parseInt(e.target.dataset.subtract))
-    }
+    const dispatch = useDispatch()
 
     return (
         <>
             <div className="score-board">
-                <h4> Team Score: { total }</h4>
+                <span> Team Score: {count} </span><br/>
                 <div>
-                    <button onClick={addToTotal} data-add="1"> + 1</button>
-                    <button onClick={subtractFromTotal} data-subtract="1"> - 1</button>
+                    <button onClick={() => dispatch(increment())} data-add="1"> + 1</button>
+                    <button onClick={() => dispatch(decrement())} data-subtract="1"> - 1</button>
                 </div>
             </div>
         </>
