@@ -9,7 +9,7 @@ export const fetchTournaments = createAsyncThunk(
     }
 )
 
-export const tournamentSlice = createSlice({
+export const tournamentsSlice = createSlice({
     name: 'tournaments',
     initialState: {
         all: [],
@@ -17,15 +17,19 @@ export const tournamentSlice = createSlice({
     },
     reducers: {
         startLoading: (state) => {
-            state.loading = true
+            return state.loading = true
         },
         endLoading: (state) => {
-            state.loading = false
+            return state.loading = false
         },
     },
-    extraReducers: {
-
+    extraReducers: (builder) => {
+        builder
+        .addCase(fetchTournaments.fulfilled, ((state, action) => {
+            state.all = action.payload
+        }))
     }
 })
 
-export default tournamentSlice.reducer
+export const { startLoading, endLoading } = tournamentsSlice.actions
+export default tournamentsSlice.reducer
