@@ -70,6 +70,20 @@ const NavBar = (props) => {
                         fontWeight: "bold",
                         color: "white"
                     }} 
+                    to="/teams" 
+                    className="navbar-optionLineTwo">
+                        Teams
+                    </NavLink >
+                </div>
+
+                <div className="navbar-option">
+                    <span className="navbar-optionLineOne">
+                       
+                    </span>
+                    <NavLink activeStyle={{
+                        fontWeight: "bold",
+                        color: "white"
+                    }} 
                     to="/scoreboard" 
                     className="navbar-optionLineTwo">
                         Score-Board
