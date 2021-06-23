@@ -1,22 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { fetchTournaments } from '../../Redux/tournamentSlice';
+
 import "../tournaments/Tournaments.css"
 
 const Tournaments = () => {
 
-    const [list, setList] = useState([])
+    const dispatch = useDispatch()
+
+    const tournaments = useSelector((state) => {
+        return state.tournaments.all
+    })
     
-    const [tournamentEvent, setTournamentEvent] = useState("")
-
-
     useEffect(() => {
-        setList(prevList => prevList )
+        console.log("mounting tournaments")
+        dispatch(fetchTournaments())
+
+        return () => {
+            console.log("unmounting tournaments")
+        }
     }, [])
+
+    const [newTournamentEvent, setNewTournamentEvent] = useState("")
 
     let addToList = (e) => {
         e.preventDefault()
-        if(tournamentEvent) {
-            setList(prevList => [...prevList, tournamentEvent])
-            setTournamentEvent("")
+        if(newTournamentEvent) {
+           
+            dispatch(addTournament({
+                tourney_name: newTournamentEvent
+            }))
+            setNewTournamentEvent("")
+        } else {
+            alert("must fill out box")
         }
     }
     
@@ -29,10 +46,10 @@ const Tournaments = () => {
         <div className="main">
             <h3>Events:</h3>
             <ul>
-                {list.map((tournamentEvent, i) => <li key={i}>{tournamentEvent}</li>)}
+                {tournaments.map((te, i) => <li key={i}>{te.tourney_name}</li>)}
             </ul>
             <form onSubmit={addToList}>
-                <input type="text" value={tournamentEvent} onChange={handleChange} />
+                <input type="text" value={newTournamentEvent} onChange={handleChange} />
                 <input type="submit" value="Add New Tournament" />
             </form>
 
