@@ -1,47 +1,53 @@
 import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchTeams } from '../../Redux/teamsSlice';
+import { fetchTeams, addTeam } from '../../Redux/teamsSlice';
+
 import "../teams/Teams.css"
 
 const Teams = () => {
-//    const [teams, setTeams] = useState([])
-   const [teamIndv, setTeamIndv] = useState("")
+    const dispatch = useDispatch()
 
-   const teams = useSelector((state) => state.teams.all)
-   const dispatch = useDispatch()
+    const teams = useSelector((state) => {
+        return state.teams.all
+    })
    
-   
-   useEffect(() => {
-       const fetchedTeams = dispatch(fetchTeams().then(() => {
-           
-       }))
-    //    dispatch(fetchTeams())
-    console.log(fetchedTeams)
-     
-    }, [])
-    
+    useEffect(() => {
+        dispatch(fetchTeams())
+        
+        return () => {
+            console.log("unmounting teams")
+        }
+     }, [])
+
+   const [teamName, setTeamName] = useState("")
 
    let addToList = (e) => {
        e.preventDefault()
-       if(teamIndv) {
-        //    setTeams(prevTeams => [...prevTeams, teamIndv])
-        //    setTeamIndv("")
+       if(teamName) {
+          dispatch(addTeam({
+              team_name: teamName
+          }))
+        //dispatch an action to backend/reducer
+        //add to backend and store
+           setTeamName("")
+       } else {
+           //alert you must fill out 
        }
    }
 
    const handleChange = (e) => {
-       setTeamIndv(e.target.value)
+       setTeamName(e.target.value)
    }
 
     return (
         <div className="team-form">
             <h3>Teams:</h3>
             <ul>
-                {teams.map((teamIndv, i) => <li key={i}>{teamIndv}</li>)}
+                {teams.map((t, i) => <li key={i}>{t.team_name}</li>)}
             </ul>
             <form onSubmit={addToList}>
-                <input type="text" value={teamIndv} onChange={handleChange} />
+                <input type="text" value={teamName} onChange={handleChange} />
                 <input type="submit" value="Create New Team"/>
             </form>
         </div>
