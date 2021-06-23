@@ -1,39 +1,50 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchTeams = createAsyncThunk(
-    'teams/fetchStatus',
-    async () => {
-        const resp = await fetch('http://localhost:3000/api/v1/teams')
-        const teamData = await resp.json()
-        return teamData
-    }
-)
+export const fetchTeams = createAsyncThunk('teams/getTeams', async () => {
+    const resp = await fetch('http://localhost:3000/api/v1/teams')
+    const teamData = await resp.json()
+    return teamData
+})
+
+export const addTeam = createAsyncThunk('teams/addTeam', async (team) => {
+    const resp = await fetch('http://localhost:3000/api/v1/teams', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(team)
+    })
+    const newTeamData = await resp.json()
+    return newTeamData
+})
 
 const teamsSlice = createSlice({
     name: 'teams',
-    initialState: { all: [], loading: false },
+    initialState: { 
+        all: [],
+        loading: false,
+    },
     reducers: {
         startLoading: (state) => {
-            state.loading = true
+           return state.loading = true
         },
 
         endLoading: (state) => {
-            state.loading = false
-        }
+           return state.loading = false
+        },
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchTeams.fulfilled, (state, action) => {
-            // state.all.push(action.payload)
-            state = action.payload
-
-        })
+        builder
+        .addCase(fetchTeams.fulfilled, ((state, action) => {
+            state.all = action.payload
+        }))
+        .addCase(addTeam.fulfilled, ((state, action) => {
+            state.all.push(action.payload)
+        }))
     },
 })
 
+export const { startLoading, endLoading } = teamsSlice.actions
 
-const { actions, reducer } = teamsSlice
-
-console.log(teamsSlice)
-
-export const { startLoading, endLoading } = actions
-export default reducer
+export default teamsSlice.reducer
