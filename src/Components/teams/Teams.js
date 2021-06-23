@@ -13,6 +13,7 @@ const Teams = () => {
     })
    
     useEffect(() => {
+        console.log("mounting teams")
         dispatch(fetchTeams())
         
         return () => {
@@ -33,6 +34,7 @@ const Teams = () => {
            setTeamName("")
        } else {
            //alert you must fill out 
+           alert("must fill out box")
        }
    }
 
