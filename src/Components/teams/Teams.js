@@ -5,7 +5,7 @@ import { fetchTeams, addTeam } from '../../Redux/teamsSlice';
 
 import "../teams/Teams.css"
 
-const Teams = () => {
+const Teams = (id: id) => {
     const dispatch = useDispatch()
 
     const teams = useSelector((state) => {
@@ -13,13 +13,13 @@ const Teams = () => {
     })
    
     useEffect(() => {
-        console.log("mounting teams")
+        // console.log("mounting teams")
         dispatch(fetchTeams())
         
-        return () => {
-            console.log("unmounting teams")
-        }
+       
      }, [])
+
+   
 
    const [teamName, setTeamName] = useState("")
 
@@ -32,11 +32,18 @@ const Teams = () => {
         //dispatch an action to backend/reducer
         //add to backend and store
            setTeamName("")
+           
        } else {
            //alert you must fill out 
            alert("must fill out box")
        }
    }
+
+//    const handleDeleteSubmit = (e) => {
+//        e.preventDefault()
+//        dispatch(deleteTeam({id: id}))
+//    }
+
 
    const handleChange = (e) => {
        setTeamName(e.target.value)
@@ -45,9 +52,9 @@ const Teams = () => {
     return (
         <div className="team-form">
             <h3>Teams:</h3>
-            <ul>
-                {teams.map((t, i) => <li key={i}>{t.team_name}</li>)}
-            </ul>
+            <div className="team-card">
+                {teams.map((t, i) => <div classname="indv-team"key={i}>{t.team_name} <button>Delete</button> <br /></div>)}
+            </div>
             <form onSubmit={addToList}>
                 <input type="text" value={teamName} onChange={handleChange} />
                 <input type="submit" value="Create New Team"/>
@@ -55,5 +62,5 @@ const Teams = () => {
         </div>
     )
 }
-
+// key={team.id} onClick={handleDeleteSubmit}
 export default Teams
