@@ -1,0 +1,51 @@
+.bracket__background {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+}
+
+.bracket__container {
+
+}
+
+.bracket__teams__rnd__one {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bracket__teams__rnd__two {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bracket__teams__semi__finals {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bracket__teams__winner {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bracket__options {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+}
+ 
+.bracket-optionLineOne {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bracket-optionLineTwo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
