@@ -21,7 +21,8 @@ export const addTournament = createAsyncThunk(
             body: JSON.stringify(tournament)
         })
         const newTournamentData = await resp.json()
-        return newTournamentData
+        console.log(newTournamentData)
+       return newTournamentData.tournament
     }
 )
 
@@ -43,6 +44,9 @@ export const tournamentsSlice = createSlice({
         builder
         .addCase(fetchTournaments.fulfilled, ((state, action) => {
             state.all = action.payload
+        }))
+        .addCase(addTournament.fulfilled, ((state, action) => {
+            state.all.push(action.payload)
         }))
     }
 })
