@@ -16,8 +16,23 @@ export const addTeam = createAsyncThunk('teams/addTeam', async (team) => {
         body: JSON.stringify(team)
     })
     const newTeamData = await resp.json()
-    return newTeamData
+    console.log(newTeamData)
+    return newTeamData.team
 })
+
+// export const deleteTeam = createAsyncThunk('teams/deleteTeam', async (team) => {
+//     const resp = await fetch(`http://localhost:3000/api/v1/teams/${id}`, {
+//         method: 'DELETE',
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(team)
+//     })
+//     const deleteTeamData = await resp.json()
+//     console.log(deleteTeamData)
+//     return deleteTeamData.team
+// })
 
 const teamsSlice = createSlice({
     name: 'teams',
@@ -42,6 +57,9 @@ const teamsSlice = createSlice({
         .addCase(addTeam.fulfilled, ((state, action) => {
             state.all.push(action.payload)
         }))
+        // .addCase(deleteTeam.fulfilled, ((state, action) => {
+        //     state.filter((team) => team.id !== action.payload.id)
+        // } ))
     },
 })
 
