@@ -16,7 +16,7 @@ const ScoreBoard = () => {
                 <div>
                     <button onClick={() => dispatch(increment())} data-add="1"> + 1</button>
                     <button onClick={() => dispatch(decrement())} data-subtract="1"> - 1</button>
-                </div>
+                </div><br></br>
             </div>
         </>
     )
