@@ -1,5 +1,7 @@
 import React from 'react'
-import SearchIcon from '@material-ui/icons/Search';
+//import SearchIcon from '@material-ui/icons/Search';
+//import logo from './logomaker.png'
+import logo from './TourneyMaker.svg'
 import '../NavBar/NavBar.css';
 import { NavLink } from 'react-router-dom';
 // import { withRouter  } from 'react-router-dom';
@@ -13,27 +15,9 @@ const NavBar = (props) => {
     
     return (
         <div className="navbar">
-            <img src='../logo/logomaker.svg' className="navbar-logo" alt="logo" />
-            <div className="navbar-search">
-                <input className="navbar-searchInput" type="text" />
-                <SearchIcon className="navbar-searchIcon" />
-            </div>
+            <img src={ logo } className="navbar-logo" alt="logo" />
+            
             <div className="navbar-header">
-                <div className="navbar-option">
-                    <span className="navbar-optionLineOne">
-                        Hello Guest
-                    </span>
-                    <NavLink 
-                    activeStyle={{
-                        fontWeight: "bold",
-                        color: "white"
-                    }} 
-                    to="/login" 
-                    className="navbar-optionLineTwo">
-                        Sign In
-                    </NavLink >
-                </div>
-
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
                         
@@ -58,7 +42,7 @@ const NavBar = (props) => {
                     }} 
                     to="/events" 
                     className="navbar-optionLineTwo">
-                        Tournaments & Events
+                        Tournaments
                     </NavLink>
                 </div>
 
@@ -75,6 +59,7 @@ const NavBar = (props) => {
                         Teams
                     </NavLink >
                 </div>
+                
 
                 <div className="navbar-option">
                     <span className="navbar-optionLineOne">
