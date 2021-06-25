@@ -6,7 +6,6 @@ import { fetchTournaments, addTournament } from '../../Redux/tournamentSlice';
 import "../tournaments/Tournaments.css"
 
 const Tournaments = () => {
-
     const dispatch = useDispatch()
 
     const tournaments = useSelector((state) => {
@@ -14,31 +13,30 @@ const Tournaments = () => {
     })
     
     useEffect(() => {
-        console.log("mounting tournaments")
+        // console.log("mounting tournaments")
         dispatch(fetchTournaments())
 
-        return () => {
-            console.log("unmounting tournaments")
-        }
+        // return () => {
+        //     console.log("unmounting tournaments")
+        // }
     }, [])
 
-    const [newTournamentEvent, setNewTournamentEvent] = useState("")
+    const [newEventName, setNewEventName] = useState("")
 
-    let addToList = (e) => {
+    let handleSubmit = (e) => {
         e.preventDefault()
-        if(newTournamentEvent) {
-           
+        if(newEventName) {
             dispatch(addTournament({
-                tourney_name: newTournamentEvent
+                tourney_name: newEventName
             }))
-            setNewTournamentEvent("")
+            setNewEventName("")
         } else {
             alert("must fill out box")
         }
     }
     
     const handleChange = (e) => {
-        setNewTournamentEvent(e.target.value)
+        setNewEventName(e.target.value)
     }
 
 
@@ -46,13 +44,12 @@ const Tournaments = () => {
         <div className="main">
             <h3>Events:</h3>
             <ul>
-                {tournaments.map((te, i) => <li key={i}>{te.tourney_name}</li>)}
+                {tournaments.map((t, i) => <li key={i}>{t.tourney_name}</li>)}
             </ul>
-            <form onSubmit={addToList}>
-                <input type="text" value={newTournamentEvent} onChange={handleChange} />
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={newEventName} onChange={handleChange} />
                 <input type="submit" value="Add New Tournament" />
             </form>
-
         </div>
     )
 }
