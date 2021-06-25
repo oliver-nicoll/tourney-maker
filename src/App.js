@@ -7,6 +7,7 @@ import Teams from './Components/teams/Teams';
 import ScoreBoard from './Components/scoreboard/ScoreBoard';
 import Tournaments from './Components/tournaments/Tournaments';
 import About from './Components/about/About'
+import SingleTournament from './Components/tournaments/SingleTournament';
 
 function App() {
 
@@ -16,19 +17,23 @@ function App() {
       <NavBar />
       <div className="app__image">
       <Switch>
-          <Route path="/about">
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/teams">
+          <Route exact path="/teams">
             <Teams />
           </Route>
-          <Route path="/events">
+          <Route exact path="/events">
             <Tournaments />
           </Route>
-          <Route path="/scoreboard">
-            <ScoreBoard />
+          <Route exact path="/events/:id">
+            <SingleTournament />
           </Route>
-          <Route path="/">
+          <Route exact path="/scoreboard">
+            <ScoreBoard  className="team__one"/>
+            <ScoreBoard className="team__two" />
+          </Route>
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
