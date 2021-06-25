@@ -1,43 +1,54 @@
 import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import Checkbox from '../teams/checkbox.js'
+
 import { fetchTeams, addTeam } from '../../Redux/teamsSlice';
 
 import "../teams/Teams.css"
 
-const Teams = (id: id) => {
+const Teams = () => {
     const dispatch = useDispatch()
 
     const teams = useSelector((state) => {
         return state.teams.all
     })
-   
+
     useEffect(() => {
         // console.log("mounting teams")
         dispatch(fetchTeams())
         
-       
-     }, [])
+        }, [])
 
-   
+    const [teamName, setTeamName] = useState("")
 
-   const [teamName, setTeamName] = useState("")
+    const [checkedItems, setCheckedItems] = useState({})
 
-   let addToList = (e) => {
-       e.preventDefault()
-       if(teamName) {
-          dispatch(addTeam({
-              team_name: teamName
-          }))
+    const handleChange = (event) => {
+        // updating an object instead of a Map
+        setCheckedItems({...checkedItems, [event.target.name] : event.target.checked });
+    }
+  
+    useEffect(() => {
+        console.log("checkedItems: ", checkedItems);
+      }, [checkedItems]); 
+
+    const addToList = (e) => {
+        e.preventDefault()
+        if(teamName) {
+            dispatch(addTeam({
+                team_name: teamName
+            }))
         //dispatch an action to backend/reducer
         //add to backend and store
-           setTeamName("")
-           
-       } else {
-           //alert you must fill out 
-           alert("must fill out box")
-       }
-   }
+            setTeamName("")
+            
+        } else {
+            //alert you must fill out 
+            alert("must fill out box")
+        }
+    }
+
 
 //    const handleDeleteSubmit = (e) => {
 //        e.preventDefault()
@@ -45,22 +56,25 @@ const Teams = (id: id) => {
 //    }
 
 
-   const handleChange = (e) => {
-       setTeamName(e.target.value)
-   }
+    const handleOChange = (e) => {
+        setTeamName(e.target.value)
+    }
 
+    console.log(teams)
     return (
         <div className="team-form">
-            <h3>Teams:</h3>
-            <div className="team-card">
-                {teams.map((t, i) => <div classname="indv-team"key={i}>{t.team_name} <button>Delete</button> <br /></div>)}
-            </div>
+            <br/>
             <form onSubmit={addToList}>
-                <input type="text" value={teamName} onChange={handleChange} />
+                <input type="text" value={teamName} onChange={handleOChange} />
+
                 <input type="submit" value="Create New Team"/>
             </form>
+            <br />
+            <div>
+                {teams.map((t, i) => <label key={i}> {t.team_name} <Checkbox name={t.team_name} checked={checkedItems[t.team_name]} onChange={handleChange}/> </label>)}
+            </div>
         </div>
     )
 }
-// key={team.id} onClick={handleDeleteSubmit}
+
 export default Teams
