@@ -21,3 +21,19 @@
                         Sign In
                     </NavLink >
 </div>
+
+
+    <form onSubmit={addToList}>
+                <input type="text" value={teamName} onChange={handleChange} />
+                <div>
+                {
+                teams.map(team => (
+                    <label key={team.key}>
+                        {team.team_name}
+                        <Checkbox name={team.name} checked={checkedteams.get(team.name)} onChange={handleChange} />
+                    </label>
+                ))
+            }
+                </div>
+                <input type="submit" value="Create New Team"/>
+            </form>
