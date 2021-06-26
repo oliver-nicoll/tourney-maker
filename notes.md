@@ -37,3 +37,12 @@
                 </div>
                 <input type="submit" value="Create New Team"/>
             </form>
+
+
+                    {tournament ? tournament.tourney_name : "Tournament not Found"}
+
+
+Notes 6/25/21
+1. Backend, Setting up my controller to create a registration 
+2. Data we send from frontend to backend is correct -json.stringify
+3. Once we get a response back, how do we take that data and update the redux store (reducer - builder)
