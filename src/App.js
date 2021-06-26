@@ -1,5 +1,10 @@
 import './App.css';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { fetchTournaments } from './Redux/tournamentSlice';
+import { fetchTeams } from './Redux/teamsSlice';
+
+import {  useDispatch } from 'react-redux';
 
 import NavBar from './Components/NavBar/NavBar'
 import Home from './Components/home/Home';
@@ -10,6 +15,26 @@ import About from './Components/about/About'
 import SingleTournament from './Components/tournaments/SingleTournament';
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // console.log("mounting teams")
+    dispatch(fetchTeams())
+    
+    return () => {
+      console.log("unmounting tournaments")
+  }
+  }, [])
+  
+  useEffect(() => {
+      console.log("mounting tournaments")
+      dispatch(fetchTournaments())
+
+      return () => {
+          console.log("unmounting tournaments")
+      }
+  }, [])
 
 
   return (
