@@ -9,6 +9,23 @@ export const fetchTournaments = createAsyncThunk(
     }
 )
 
+export const addTeamToTournament = createAsyncThunk('tournaments/addTeamToTournament', async (tournament_id, id) => {
+    const resp = await fetch( `http://localhost:3000//api/v1/tournaments/${tournament_id}/registrations`,  {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+            {team_id: id,
+            tournament_id: tournament_id}
+        )
+    })
+    const data = await resp.json()
+    console.log(data)
+    return data
+})
+
 export const addTournament = createAsyncThunk(
     'tournaments/addTournament', 
     async (tournament) => {
@@ -16,12 +33,12 @@ export const addTournament = createAsyncThunk(
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-            'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(tournament)
         })
         const newTournamentData = await resp.json()
-        console.log(newTournamentData)
+        //console.log(newTournamentData)
        return newTournamentData.tournament
     }
 )
@@ -30,6 +47,7 @@ export const tournamentsSlice = createSlice({
     name: 'tournaments',
     initialState: {
         all: [],
+        teamTournament: [],
         loading: false,
     },
     reducers: {
@@ -48,6 +66,9 @@ export const tournamentsSlice = createSlice({
         .addCase(addTournament.fulfilled, ((state, action) => {
             state.all.push(action.payload)
         }))
+        .addCase(addTeamToTournament.fulfilled, ((state, action) => {
+            console.log(action.payload)
+        } ))
     }
 })
 
