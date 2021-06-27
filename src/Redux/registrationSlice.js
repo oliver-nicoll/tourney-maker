@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const getById = createAsyncThunk('registration/getById', async (tournament_id) => {
     const resp = await fetch( `http://localhost:3000//api/v1/tournaments/${tournament_id}/registrations`).fetchById(tournament_id)
     const data = await resp.json()
-    console.log(data)
+    return data
 })
 
 const registrationSlice = createSlice({
@@ -25,9 +25,9 @@ const registrationSlice = createSlice({
     extraReducers: (builder) => {
         builder
         .addCase(getById.fulfilled, ((state, action) => {
-            state.tournaments.push(action.payload)
+            state.teams.push(action.payload)
         }))
-    },
+    }
 })
 
 export const { startLoading, endLoading } = registrationSlice.actions
