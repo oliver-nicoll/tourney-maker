@@ -9,10 +9,6 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
 
-
-    console.log(props)
-
-    
     return (
         <div className="navbar">
             <img src={ logo } className="navbar-logo" alt="logo" />
@@ -79,7 +75,5 @@ const NavBar = (props) => {
         </div>
     )
 }
-
-// export default withRouter(NavBar);
 
 export default NavBar;
