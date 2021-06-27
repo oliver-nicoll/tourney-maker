@@ -57,11 +57,11 @@ const teamsSlice = createSlice({
         .addCase(addTeam.fulfilled, ((state, action) => {
             state.all.push(action.payload)
         }))
-        // .addCase(deleteTeam.fulfilled, ((state, action) => {
-        //     state.filter((team) => team.id !== action.payload.id)
-        // } ))
     },
 })
+
+export const selectTeamById = (state, teamId) =>
+    state.teams.find((team) => team.id === teamId)
 
 export const { startLoading, endLoading } = teamsSlice.actions
 
