@@ -49,3 +49,23 @@ Notes 6/25/21
 
 
 // const [teamPick, setTeamPick] = useState("")
+tournament.js
+<ul>
+                {tournaments.map((t, i) => <li className="event__list" key={i}><Link to={`/events/${t.id}`}>{t.tourney_name}</Link>
+                </li>)}
+            </ul>
+team.js: checkbox
+//import Checkbox from '../teams/checkbox.js'
+
+            <Checkbox name={t.team_name} checked={checkedItems[t.team_name]} onChange={handleChange}/>
+
+              // const [checkedItems, setCheckedItems] = useState({})
+
+    // const handleChange = (event) => {
+    //     // updating an object instead of a Map
+    //     setCheckedItems({...checkedItems, [event.target.name] : event.target.checked });
+    // }
+  
+    // useEffect(() => {
+    //     console.log("checkedItems: ", checkedItems);
+    //   }, [checkedItems]); 
