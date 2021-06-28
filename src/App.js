@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { fetchTournaments } from './Redux/tournamentSlice';
 import { fetchTeams } from './Redux/teamsSlice';
-
 import {  useDispatch } from 'react-redux';
 
 import NavBar from './Components/NavBar/NavBar'
@@ -38,31 +37,34 @@ function App() {
 
 
   return (
-    <div className="App" >
+    <div className="Body" >
       <NavBar />
-      <div className="app__image">
-      <Switch>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/teams">
-            <Teams />
-          </Route>
-          <Route exact path="/events">
-            <Tournaments />
-          </Route>
-          <Route exact path="/events/:id">
-            <SingleTournament />
-          </Route>
-          <Route exact path="/scoreboard">
-            <ScoreBoard  className="team__one"/>
-            <ScoreBoard className="team__two" />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
+      <div className="app__switch">
+      <div>
+        <Switch>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/teams">
+              <Teams />
+            </Route>
+            <Route exact path="/events">
+              <Tournaments />
+            </Route>
+            <Route exact path="/events/:id">
+              <SingleTournament />
+            </Route>
+            <Route exact path="/scoreboard">
+              <ScoreBoard  className="team__one"/>
+              <ScoreBoard className="team__two" />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
+          </div>
        </div>
+
     </div>
   );
 }
