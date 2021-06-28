@@ -1,9 +1,10 @@
 import React from 'react'
 //import SearchIcon from '@material-ui/icons/Search';
+
 //import logo from './logomaker.png'
 import logo from './TourneyMaker.svg'
 import '../NavBar/NavBar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 // import { withRouter  } from 'react-router-dom';
 
 
@@ -11,7 +12,8 @@ const NavBar = (props) => {
 
     return (
         <div className="navbar">
-            <img src={ logo } className="navbar-logo" alt="logo" />
+            <Link to="/"><img src={ logo } className="navbar-logo" alt="logo" />
+            </Link>
             
             <div className="navbar-header">
                 <div className="navbar-option">
