@@ -50,15 +50,17 @@ const TournamentForm = () => {
 
 
 return (
-    <div className="main">
-
-        <form onSubmit={handleSubmit}>
-            Tournament Name: <input type="text" value={newEventName} onChange={handleChange} />
-            Tournament Date: <input type="text" value={newDate} onChange={handleDateChange} />
-            Tournament Description: <input type="text" value={newDesc} onChange={handleDescChange} />                
-            Tournament Host: <input type="text" value={newHost} onChange={handleHostChange} />                
+    <div className="form__tournament">
+       <strong><em>Create New Tournament:</em></strong>  
+       <br></br>
+       <br></br> 
+       <form onSubmit={handleSubmit}>
+            Tournament Name: <input type="text" value={newEventName} onChange={handleChange} /><br></br>
+            Tournament Date: <input type="text" value={newDate} onChange={handleDateChange} /><br></br>
+            Tournament Description: <input type="text" value={newDesc} onChange={handleDescChange} /> <br></br>               
+            Tournament Host: <input type="text" value={newHost} onChange={handleHostChange} /> <br></br>               
             <br></br>
-            <input type="submit" value="Add New Tournament" />
+            <input type="submit" value="Add New Tournament" /><br></br>
         </form>
     </div>
 )
