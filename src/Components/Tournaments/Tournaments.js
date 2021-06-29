@@ -1,17 +1,11 @@
 import React  from 'react';
-//import { useSelector } from 'react-redux';
 import TournamentForm from '../tournaments/TournamentForm'
 import DesignGrid from '../tournaments/DesignGrid'
 
 import "../tournaments/Tournaments.css"
 
 
-
 const Tournaments = () => {
-
-    
-
-   
 
 
     return (
