@@ -22,7 +22,7 @@ const NavBar = (props) => {
                     </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "white"
+                        color: "black"
                     }} 
                     to="/about" 
                     className="navbar-optionLineTwo" >
@@ -36,7 +36,7 @@ const NavBar = (props) => {
                     </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "white"
+                        color: "black"
                     }} 
                     to="/events" 
                     className="navbar-optionLineTwo">
@@ -50,7 +50,7 @@ const NavBar = (props) => {
                     </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "white"
+                        color: "black"
                     }} 
                     to="/teams" 
                     className="navbar-optionLineTwo">
@@ -65,7 +65,7 @@ const NavBar = (props) => {
                     </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "white"
+                        color: "black"
                     }} 
                     to="/scoreboard" 
                     className="navbar-optionLineTwo">
