@@ -1,10 +1,19 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getById = createAsyncThunk('registration/getById', async (tournament_id) => {
-    const resp = await fetch( `http://localhost:3000//api/v1/tournaments/${tournament_id}/registrations`).fetchById(tournament_id)
-    const data = await resp.json()
-    return data
+export const createRegistrations = createAsyncThunk('registration/createRegistrations',
+    async (team, tournament) => {
+    const resp = await fetch( `http://localhost:3000//api/v1/tournaments/${tournament.id}/registrations`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(team, tournament)
+    })
+    const newData = await resp.json()
+   console.log(newData)
 })
+
 
 const registrationSlice = createSlice({
     name: 'registration',
@@ -24,7 +33,7 @@ const registrationSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-        .addCase(getById.fulfilled, ((state, action) => {
+        .addCase(createRegistrations.fulfilled, ((state, action) => {
             state.teams.push(action.payload)
         }))
     }
