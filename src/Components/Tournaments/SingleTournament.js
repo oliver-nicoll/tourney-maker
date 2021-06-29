@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { addTeamToTournament } from '../../Redux/tournamentSlice';
-import { getById } from '../../Redux/registrationSlice';
-import {selectTeamById} from '../../Redux/teamsSlice';
+import { createRegistrations } from '../../Redux/registrationSlice';
 import DisplayTeamTournaments from '../teams/DisplayTeamTournaments'
 
 
@@ -28,15 +27,19 @@ const SingleTournament = ({match}) => {
 
     const handleOnChange = (e) => {
         setTeamPick(e.target.value)  
-        console.log(teamPick)
+        //console.log(teamPick)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(teamPick)
-        createRegistration()
-       // dispatch(addTeamToTournament(tournament.id, teamPick))
-        setTeamPick("")
+        //console.log(teamPick)
+        if (teamPick, tournament) {
+            createRegistration()
+            // dispatch(createRegistration(tournament.id, teamPick))
+            setTeamPick("")
+        } else {
+            alert('try again')
+        }
     }
 
     const createRegistration = () => {
@@ -52,6 +55,9 @@ const SingleTournament = ({match}) => {
                 }
             )
         })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        
     }
 
 
@@ -76,6 +82,7 @@ const SingleTournament = ({match}) => {
                 <div className="form__container__team">
                     <br/><br/>
                     <br/><br/>
+                    {tournament.teams.length <= 7 ?
                         <form onSubmit={handleSubmit}>
                             <input list="add__team" value={teamPick} onChange={handleOnChange} />
                                 <datalist id="add__team">
@@ -83,7 +90,9 @@ const SingleTournament = ({match}) => {
                                             <option key={i} value={t.id}>{t.team_name}</option>)} 
                                 </datalist>
                             <input type="submit" value="Add Team"/>
-                        </form>    
+                        </form>   
+                        : "Slots are filled"
+                    } 
                 </div>
             </div>
             : "Tournament not Found"}
