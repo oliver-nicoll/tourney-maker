@@ -1,6 +1,58 @@
-.score-board {
-    text-align: center;
-    background-image: url('../scoreboard/score.png');
-    background-size: cover;
+.picture__scoreboard {
+    background-image: url(../scoreboard/score.png);
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    height: 600px;
+    
+}
+
+/* .counter__scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.team__one__title {
+    color: white;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 80%;
+    left: 44%;
+    margin: -100px 0 0 -150px;
+}
+.team__two__title {
+    color: white;
+    /* display: flex; */
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 80%;
+    left: 71%;
+    margin: -100px 0 0 -150px;
+}
+
+.buttons__one {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 69%;
+    left: 45%;
+    margin: -100px 0 0 -150px;
+}
+
+.buttons__two {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 69%;
+    left: 73%;
+    margin: -100px 0 0 -150px;
 }
