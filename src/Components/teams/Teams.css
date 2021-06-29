@@ -6,6 +6,9 @@
     text-align: center;
 }
 .makeStyles-root-1 {
-    width: 500px;
-    margin-left: 200px;
+    background-color: ‘white’;
+    width: ‘30rem’;
+    border-radius: ‘7px’;
+    box-shadow: ‘0 20px 20px rgba(0, 0, 0, 0.2), 0px, 0px, 50px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem
 }
