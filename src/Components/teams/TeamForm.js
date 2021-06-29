@@ -46,8 +46,8 @@ const TeamForm = () => {
     const [open, setOpen] = React.useState(false);
 
     const [teamName, setTeamName] = useState("")
-    //const [players, setPlayers] = useState([])
     const [captain, setCaptain] = useState("")
+    //const [players, setPlayers] = useState([])
     // const [count, setCount] = useState("")
     // const [rank, setRank] = useState("")
     
@@ -102,7 +102,7 @@ const TeamForm = () => {
       };
     
 
-    console.log(teams)
+    
     return (
         <div className="div__form" >
             <button type="button" onClick={handleOpen}>
