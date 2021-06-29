@@ -1,17 +1,25 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-
-import { useSelector, useDispatch } from 'react-redux';
-import { getById } from '../../Redux/registrationSlice';
+import { useSelector } from 'react-redux';
 
 const DisplayTeamTournaments = () => {
 
     const { id } = useParams()
-    //const state = useSelector(state =>  state.registration.teams.find((team) => team.id == id))
+
+    const tournament = useSelector((state) => state.tournaments.all.find((tournament) => tournament.id == id))
+    
 
     return (
+        
         <div>
-            Teams: 
+            {tournament.teams.length >= 1 ?
+                <div className="tournamentteams__container">
+                    Teams:
+                        <div>
+                            {tournament.teams.map((t, i) => <div key={i}> <br />{i + 1}. {t.team_name} </div>)} 
+                        </div>
+                </div>
+            : "Teams aren't signed up yet - Join today!"}
         </div>
     )
 }
