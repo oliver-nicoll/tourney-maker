@@ -55,8 +55,7 @@ function App() {
               <SingleTournament />
             </Route>
             <Route exact path="/scoreboard">
-              <ScoreBoard  className="team__one"/>
-              <ScoreBoard className="team__two" />
+              <ScoreBoard  className="score__board"/>
             </Route>
             <Route exact path="/">
               <Home />
