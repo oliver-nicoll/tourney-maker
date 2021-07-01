@@ -10,9 +10,14 @@ const Tournaments = () => {
 
     return (
         <div className="main">
-            <div className="tournament__form">
-                <TournamentForm />
-            </div><br></br>
+            <br></br>
+            <details>
+                <summary> Create Tournament </summary>
+                <div className="tournament__form">
+                    <TournamentForm />
+                </div>
+            </details>
+            <br></br>
             <div className="design__grid">
                 <DesignGrid />
             </div>
