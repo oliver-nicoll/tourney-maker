@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-
 import "../teams/Teams.css"
 
 const useStyles = makeStyles({
@@ -14,7 +13,7 @@ const useStyles = makeStyles({
     },
     bullet: {
       display: 'inline-block',
-      margin: '0 2px',
+      margin: '0 25px',
       transform: 'scale(0.8)',
     },
     title: {
@@ -39,10 +38,14 @@ const Teams = () => {
   
     return (
         <div className="team">
-            <br></br>
-            <div className="team-form">
-                <TeamForm />
-            </div><br></br>
+          <br></br>
+          <details>
+            <summary>Create Team</summary>
+              <br></br>
+              <div className="team-form">
+                  <TeamForm />
+              </div><br></br>
+          </details>
             <div className="team__card">
                 <h2>Team List:</h2>
             {teams.map((t, i) => 
