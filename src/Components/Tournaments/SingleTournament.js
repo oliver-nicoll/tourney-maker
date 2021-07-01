@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
-import { addTeamToTournament } from '../../Redux/tournamentSlice';
-import { createRegistrations } from '../../Redux/registrationSlice';
+import { fetchTournaments } from '../../Redux/tournamentSlice';
 import DisplayTeamTournaments from '../teams/DisplayTeamTournaments'
 
 
@@ -14,13 +13,10 @@ const SingleTournament = ({match}) => {
 
     const { id } = useParams()
 
-    //const team = useSelector(state => selectTeamById(state, teamId))
 
     const tournament = useSelector((state) => state.tournaments.all.find((tournament) => tournament.id == id))
 //just to grab info from store
     const teams = useSelector((state) => state.teams.all)
-
-   
     
     const [teamPick, setTeamPick] = useState("")
 
@@ -32,10 +28,9 @@ const SingleTournament = ({match}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        //console.log(teamPick)
         if (teamPick, tournament) {
             createRegistration()
-            // dispatch(createRegistration(tournament.id, teamPick))
+            dispatch(fetchTournaments())
             setTeamPick("")
         } else {
             alert('try again')
@@ -56,12 +51,7 @@ const SingleTournament = ({match}) => {
             )
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
-        
     }
-
-
-    
 
 
     return(
@@ -82,7 +72,7 @@ const SingleTournament = ({match}) => {
                 <div className="form__container__team">
                     <br/><br/>
                     <br/><br/>
-                    {tournament.teams.length <= 7 ?
+                    {tournament.teams && (tournament.teams.length < 8  ?
                         <form onSubmit={handleSubmit}>
                             <input list="add__team" value={teamPick} onChange={handleOnChange} />
                                 <datalist id="add__team">
@@ -91,7 +81,7 @@ const SingleTournament = ({match}) => {
                                 </datalist>
                             <input type="submit" value="Add Team"/>
                         </form>   
-                        : "Slots are filled"
+                        : "Slots are filled")
                     } 
                 </div>
             </div>
