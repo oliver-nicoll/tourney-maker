@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
-
-
 import { addTeam } from '../../Redux/teamsSlice';
 
 import "../teams/Teams.css"
@@ -22,7 +20,7 @@ function getModalStyle() {
       top: `${top}%`,
       left: `${left}%`,
       transform: `translate(-${top}%, -${left}%)`,
-    };
+    }
   }
 
 const useStyles = makeStyles((theme) => ({
