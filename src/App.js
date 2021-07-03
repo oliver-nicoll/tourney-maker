@@ -14,6 +14,7 @@ import ScoreBoard from './Components/scoreboard/ScoreBoard';
 import Tournaments from './Components/tournaments/Tournaments';
 import About from './Components/about/About'
 import SingleTournament from './Components/tournaments/SingleTournament';
+import SingleTeam from './Components/teams/SingleTeam';
 
 function App() {
 
@@ -49,6 +50,9 @@ function App() {
               </Route>
               <Route exact path="/teams">
                 <Teams />
+              </Route>
+              <Route exact path="/teams/:id">
+                <SingleTeam />
               </Route>
               <Route exact path="/events">
                 <Tournaments />
