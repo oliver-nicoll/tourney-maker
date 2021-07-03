@@ -5,6 +5,8 @@ import { fetchTournaments } from './Redux/tournamentSlice';
 import { fetchTeams } from './Redux/teamsSlice';
 import {  useDispatch } from 'react-redux';
 
+import { FooterContainer } from './Containers/Footer'
+
 import NavBar from './Components/NavBar/NavBar'
 import Home from './Components/home/Home';
 import Teams from './Components/teams/Teams';
@@ -40,30 +42,30 @@ function App() {
     <div className="Body" >
       <NavBar />
       <div className="app__switch">
-      <div>
-        <Switch>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/teams">
-              <Teams />
-            </Route>
-            <Route exact path="/events">
-              <Tournaments />
-            </Route>
-            <Route exact path="/events/:id">
-              <SingleTournament />
-            </Route>
-            <Route exact path="/scoreboard">
-              <ScoreBoard  className="score__board"/>
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
+        <div>
+          <Switch>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/teams">
+                <Teams />
+              </Route>
+              <Route exact path="/events">
+                <Tournaments />
+              </Route>
+              <Route exact path="/events/:id">
+                <SingleTournament />
+              </Route>
+              <Route exact path="/scoreboard">
+                <ScoreBoard  className="score__board"/>
+              </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
           </Switch>
-          </div>
-       </div>
-
+        </div>
+      </div>
+      <FooterContainer />
     </div>
   );
 }
