@@ -49,9 +49,9 @@ const Teams = () => {
             <div className="team__card">
                 <h2>Team List:</h2>
             {teams.map((t, i) => 
-                  <Card className={classes.root}>
+                  <Card key={i} className={classes.root}>
                       <CardContent className="card__content">
-                          <Typography className={classes.id} color="textSecondary" gutterBottom key={i}> Volleyball Team Name:  <br /></Typography>
+                          <Typography className={classes.id} color="textSecondary"> Volleyball Team Name:  <br /></Typography>
                           <Typography variant="h5" component="h2">{t.team_name}
                           </Typography><br></br>
                           <Typography className={classes.id} color="textSecondary">
