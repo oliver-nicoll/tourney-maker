@@ -14,7 +14,6 @@ const ScoreBoard = () => {
                     <div className="counter__scoreboard">
                         <Counter />
                     </div>
-                    {/* <img src={picture} /> */}
                 </div>
             </div>
         </>
