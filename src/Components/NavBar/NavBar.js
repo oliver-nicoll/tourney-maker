@@ -1,11 +1,7 @@
 import React from 'react'
-//import SearchIcon from '@material-ui/icons/Search';
-
-//import logo from './logomaker.png'
 import logo from './TourneyMaker.svg'
 import '../NavBar/NavBar.css';
 import { NavLink, Link } from 'react-router-dom';
-// import { withRouter  } from 'react-router-dom';
 
 
 const NavBar = (props) => {
