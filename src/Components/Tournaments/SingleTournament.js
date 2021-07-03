@@ -6,7 +6,7 @@ import DisplayTeamTournaments from '../teams/DisplayTeamTournaments'
 
 
 const SingleTournament = ({match}) => {
-    //const { teamId } = match.params
+   
 //useSelector to find the tournament with that id from the store and render on page
 //add team to tournament here - form 
    const dispatch = useDispatch()
