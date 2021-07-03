@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  align-items: center;
-  position: fixed;
-  left: 0;
+  position: absolute;
+  right: 0;
   bottom: 0;
-  width: 100%;  
+  left: 0;
+  padding: 1rem;
   background-color: black;
+  text-align: center;
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }
