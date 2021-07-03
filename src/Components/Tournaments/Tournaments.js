@@ -1,6 +1,6 @@
 import React  from 'react';
 import TournamentForm from '../tournaments/TournamentForm'
-import DesignGrid from '../tournaments/DesignGrid'
+import TournamentGrid from './TournamentGrid'
 
 import "../tournaments/Tournaments.css"
 
@@ -19,7 +19,7 @@ const Tournaments = () => {
             </details>
             <br></br>
             <div className="design__grid">
-                <DesignGrid />
+                <TournamentGrid />
             </div>
         </div>
     )

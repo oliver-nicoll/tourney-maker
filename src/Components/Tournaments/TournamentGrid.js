@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
       },
     }));
 
-    export default function TitlebarGridList() {
+    export default function TournamentGrid() {
         const classes = useStyles();
 
         const tournaments = useSelector((state) => {
