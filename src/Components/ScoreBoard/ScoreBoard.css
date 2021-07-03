@@ -9,30 +9,24 @@
     
 }
 
-/* .counter__scoreboard {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 .team__one__title {
     color: white;
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 200px;
     z-index: 15;
-    top: 80%;
+    top: 69%;
     left: 44%;
     margin: -100px 0 0 -150px;
 }
 .team__two__title {
     color: white;
     /* display: flex; */
-    position: absolute;
+    position: fixed;
     width: 300px;
     height: 200px;
     z-index: 15;
-    top: 80%;
+    top: 69%;
     left: 71%;
     margin: -100px 0 0 -150px;
 }
@@ -42,8 +36,8 @@
     width: 300px;
     height: 200px;
     z-index: 15;
-    top: 69%;
-    left: 45%;
+    top: 80%;
+    left: 40%;
     margin: -100px 0 0 -150px;
 }
 
@@ -52,7 +46,7 @@
     width: 300px;
     height: 200px;
     z-index: 15;
-    top: 69%;
-    left: 73%;
+    top: 80%;
+    left: 67%;
     margin: -100px 0 0 -150px;
 }
