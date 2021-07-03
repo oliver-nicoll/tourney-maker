@@ -1,13 +1,11 @@
 import React from 'react';
 import "./Bracket.css"
 import bracket from "../Bracket/bracketbground.png"
-import Teams from "../../teams/Teams"
+// import Teams from "../teams/Teams"
 const Bracket = () => {
 
     //each new game instance is each round, has opponent team and team
-    const addTeamToBracket = () => {
-
-    }
+   
     return (
         <div className="bracket__container">
             <img src={ bracket } className="bracket__background" alt="bracket" />
