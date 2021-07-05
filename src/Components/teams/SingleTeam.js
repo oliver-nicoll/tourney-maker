@@ -25,8 +25,6 @@ const SingleTeam = ({match}) => {
                 </div>
                 <div className="team__info">
                     Captain: {team.team_captain}<br/><br/>
-                    
-                    Players: {team.players}
                 <br/><br/>
                     Ranked: {team.ranked}
                 </div>
