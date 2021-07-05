@@ -30,7 +30,7 @@ or type in:
 
 ## Sample Demo Video
 
-To look at a sample demo video click [here](https://youtu.be/5r1vtX8Pmn4)
+To look at a sample demo video click [here](https://youtu.be/QXVDVYwgsjU)
 
 ## Contributing
 
