@@ -25,12 +25,12 @@ function App() {
     dispatch(fetchTeams())
     
     return () => {
-      console.log("unmounting tournaments")
+      console.log("unmounting teams")
   }
   }, [])
   
   useEffect(() => {
-      console.log("mounting tournaments")
+      // console.log("mounting tournaments")
       dispatch(fetchTournaments())
 
       return () => {
@@ -69,7 +69,7 @@ function App() {
           </Switch>
         </div>
       </div>
-      <FooterContainer />
+      {/* <FooterContainer /> */}
     </div>
   );
 }
