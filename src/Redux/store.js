@@ -3,8 +3,6 @@ import teamsReducer from "./teamsSlice";
 import tournamentsReducer from "./tournamentSlice";
 
 
-
-
 export default configureStore({
     reducer: {
         teams: teamsReducer,
