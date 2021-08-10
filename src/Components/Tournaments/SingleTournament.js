@@ -5,7 +5,7 @@ import { fetchTournaments } from '../../Redux/tournamentSlice';
 import DisplayTeamTournaments from '../teams/DisplayTeamTournaments'
 
 
-const SingleTournament = ({match}) => {
+const SingleTournament = () => {
    
 //useSelector to find the tournament with that id from the store and render on page
 //add team to tournament here - form 
@@ -23,7 +23,6 @@ const SingleTournament = ({match}) => {
 
     const handleOnChange = (e) => {
         setTeamPick(e.target.value)  
-        //console.log(teamPick)
     }
 
     const handleSubmit = (e) => {
