@@ -16,6 +16,7 @@ const Teams = () => {
                   </div>
                 <br></br>
             </details>
+
                 <div className="team__card">
                     <TeamGrid />
                 </div>
