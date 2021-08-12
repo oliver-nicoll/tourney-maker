@@ -12,7 +12,7 @@ const DisplayTeamTournaments = () => {
     return (
         
         <div>
-            {tournament.teams && (tournament.teams.length <= 8 || tournament.teams.length >= 1 ?
+            {tournament.teams && (tournament.teams.length <= 8 || tournament.teams.length >= 0 ?
                 <div className="tournamentteams__container">
                     Teams:
                     
