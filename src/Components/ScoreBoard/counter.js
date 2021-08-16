@@ -1,50 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "../scoreboard/ScoreBoard.css"
 
-const Counter = () => {
-
-    const [countOne, setCountOne] = useState(0)
-
-    const [countTwo, setCountTwo] = useState(0)
-
-  
-    const addToTotalO = (e) => {
-        setCountOne(prevTotal => prevTotal + parseInt(e.target.dataset.add))
-    }
-
-    const subtractToTalO = (e) => {
-        setCountOne(prevTotal => prevTotal - parseInt(e.target.dataset.subtract))
-    }
-
-    const addTototalT = (e) => {
-        setCountTwo(prevTotal => prevTotal + parseInt(e.target.dataset.add))
-    }
-
-    const subtractTotalT = (e) => {
-        setCountTwo(prevTotal => prevTotal - parseInt(e.target.dataset.subtract))
-    }
-
+function Counter(props) {
     
         return (
-            <div className="counter__main">
-                <div className="Team__One__Score">
-                    <h2 className="team__one__title">Score A: {countOne}</h2>
-                    <div className="buttons__one">
-                        <button onClick={addToTotalO} data-add="1">+ 1</button>
-                        <button onClick={subtractToTalO} data-subtract="1">- 1</button>
-                    </div>
-                </div>
 
-                <div className="Team__Two__Score">
-                    <h2 className="team__two__title">Score B: {countTwo}</h2>
-                    <div className="buttons__two">
-                        <button onClick={addTototalT} data-add="1">+ 1</button>
-                        <button onClick={subtractTotalT} data-subtract="1">- 1</button>
+            <div className="counter">
+                <button className="counter__action decrement" onClick={() => props.onChange(-1)}>-</button>
+                    <div className="counter__score">
+                        {props.score}
                     </div>
-                </div>
+                <button className="counter__action increment" onClick={() => props.onChange(1)}>+</button>
             </div>
         );
     
 }
+
  
 export default Counter;
