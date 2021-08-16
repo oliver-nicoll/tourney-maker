@@ -22,9 +22,9 @@ class ScoreBoard extends React.Component {
                 }
             ]
         };
-        this.onScoreChange = this.onScoreChange.bind(this)
-        this.onTeamAdd = this.onTeamAdd.bind(this)
-        // this.onTeamRemove = this.onTeamRemove.bind(this)
+        this.onScoreChange = this.onScoreChange.bind(this);
+        this.onTeamAdd = this.onTeamAdd.bind(this);
+        this.onRemoveTeam = this.onRemoveTeam.bind(this);
     }
             
     
@@ -38,11 +38,9 @@ class ScoreBoard extends React.Component {
         this.setState(this.state)
     }
     
-    onTeamRemove(e) {
-        const target = e.target.value;
-        console.log(target)
-        // this.state.teamSB.splice(index, 1)
-        // this.setState(this.state)
+    onRemoveTeam(index) {
+        this.state.teamSB.splice(index, 1)
+        this.setState(this.state)
     }
     
     render() {
@@ -58,7 +56,7 @@ class ScoreBoard extends React.Component {
                                 game={team.game}
                                 key={team.name}
                                 onScoreChange={(delta) => this.onScoreChange(index, delta)}
-                                onRemove={() => this.onTeamRemove}
+                                onRemoveTeam={(index) => this.onRemoveTeam(index)}
                                 />
                            );
                         }.bind(this)
