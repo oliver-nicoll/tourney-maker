@@ -1,15 +1,13 @@
 .title__home {
     text-align: center;
     padding: 45px;
-    border-radius: 15px;
-    border-color: black;
-    border-style: solid;
     margin-left: auto;
     margin-top: 10px;
     margin-right: auto;
     align-items: center;
     display: block;
     width: 800px;
+    font-size: 25px;
 }
 .home__image {
     width: 100%;

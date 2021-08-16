@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { fetchTournaments } from '../../Redux/tournamentSlice';
-import DisplayTeamTournaments from '../teams/DisplayTeamTournaments'
+import DisplayTeamTournaments from '../teams/DisplayTeamTournaments';
+import { Link } from "react-router-dom";
 
 
 const SingleTournament = () => {
@@ -20,6 +21,9 @@ const SingleTournament = () => {
     
     const [teamPick, setTeamPick] = useState("")
 
+    const handleClick = (e) => {
+
+    }
 
     const handleOnChange = (e) => {
         setTeamPick(e.target.value)  
@@ -81,7 +85,7 @@ const SingleTournament = () => {
                                     </datalist>
                                 <input className="button__input" type="submit" value="Add Team"/>
                             </form>   
-                        : "Slots are filled"
+                        : <div><strong>Slots are filled </strong> </div>
                         } 
                     </div>
                     : "Please Try again later."}

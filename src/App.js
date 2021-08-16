@@ -15,6 +15,7 @@ import Tournaments from './Components/tournaments/Tournaments';
 import About from './Components/about/About'
 import SingleTournament from './Components/tournaments/SingleTournament';
 import SingleTeam from './Components/teams/SingleTeam';
+import Bracket from './Components/tournaments/Bracket/Bracket';
 
 function App() {
 
@@ -62,6 +63,9 @@ function App() {
               </Route>
               <Route exact path="/scoreboard">
                 <ScoreBoard  className="score__board"/>
+              </Route>
+              <Route exact path="/events/:id/bracket">
+                <Bracket  className="bracket"/>
               </Route>
               <Route exact path="/">
                 <Home />

@@ -39,15 +39,21 @@
     
 }
 
-.button__teamform {
-    margin-top: 10px;
+.button__team__form {
+    margin-top: 20px;
+    margin-left: -950px;
     border-radius: 10px;
     color:black;
     background-color: white;
 }
 
-.button__teamform:hover {
+.button__team__form:hover {
     color: white;
     background-color: black;
+}
+
+.team__form {
+    align-items: center;
+    position: relative;
 }
 
