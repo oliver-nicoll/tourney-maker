@@ -7,6 +7,10 @@ const Stats = (props) => {
         return total + teamSB.score
     }, 0)
 
+    const totalGames = props.teamSB.reduce(function (total, team) {
+        return team.game
+    }, 0)
+
     return(
         <table className="stats">
             <tbody>
@@ -17,6 +21,10 @@ const Stats = (props) => {
                 <tr>
                     <td>Total Points:</td>
                     <td>{totalPoints}</td>
+                </tr>
+                <tr>
+                    <td>Game:</td>
+                    <td>{totalGames}</td>
                 </tr>
             </tbody>
         </table>
