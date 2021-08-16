@@ -5,7 +5,7 @@ import { fetchTournaments } from './Redux/tournamentSlice';
 import { fetchTeams } from './Redux/teamsSlice';
 import {  useDispatch } from 'react-redux';
 
-import { FooterContainer } from './Containers/Footer'
+// import { FooterContainer } from './Containers/Footer'
 
 import NavBar from './Components/NavBar/NavBar'
 import Home from './Components/home/Home';
