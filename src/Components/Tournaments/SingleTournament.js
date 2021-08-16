@@ -61,9 +61,10 @@ const SingleTournament = () => {
                     {tournament.tourney_name }
                 </div>
                 <div className="tournament__info">
-                    Date: {tournament.date}<br/><br/>Host:{tournament.host}<br/><br/>
+                    Date: {tournament.date}<br></br><br></br>
+                    Host:{tournament.host}<br></br><br></br>
                     Description: {tournament.description}
-                </div>
+                </div><br></br>
                 <div>
                     <DisplayTeamTournaments />
                 </div>
@@ -72,13 +73,13 @@ const SingleTournament = () => {
                     <br/><br/>
                     <br/><br/>
                     {tournament.teams && (tournament.teams.length < 8  ?
-                        <form onSubmit={handleSubmit}>
-                            <input list="add__team" value={teamPick} onChange={handleOnChange} />
+                        <form className="form__input__tournament" onSubmit={handleSubmit}>
+                            <input className="input__box" list="add__team" value={teamPick} onChange={handleOnChange} />
                                 <datalist id="add__team">
                                         {teams.map((t, i) => 
                                             <option key={i} value={t.id}>{t.team_name}</option>)} 
                                 </datalist>
-                            <input type="submit" value="Add Team"/>
+                            <input className="button__input" type="submit" value="Add Team"/>
                         </form>   
                         : "Slots are filled")
                     } 

@@ -6,12 +6,12 @@ import "../teams/Teams.css"
 const Teams = () => {
   
     return (
-        <div className="team">
+        <div className="teams__container">
           <br></br>
-            <details>
-              <summary>Create Team</summary>
+            <details className="create__team__dropdown">
+              <summary className="title__summary">Create Team</summary>
                 <br></br>
-                  <div className="team-form">
+                  <div className="team__form">
                       <TeamForm />
                   </div>
                 <br></br>

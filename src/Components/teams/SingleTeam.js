@@ -19,13 +19,12 @@ const SingleTeam = ({match}) => {
     return(
         <div>
             {team ?
-            <div className="team__container">
-                <div className="team__name">
+            <div className="team__info__container">
+                <div className="team__info__name">
                     {team.team_name }
                 </div>
                 <div className="team__info">
                     Captain: {team.team_captain}<br/><br/>
-                <br/><br/>
                     Ranked: {team.ranked}
                 </div>
             </div>

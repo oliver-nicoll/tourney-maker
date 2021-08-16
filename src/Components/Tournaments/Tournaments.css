@@ -4,6 +4,8 @@
   }
   .form__tournament {
     text-align: center;
+    font-family: monospace;
+  
   }
   details {
     border: 1px solid #aaa;
@@ -24,10 +26,97 @@ summary {
   padding: .5em;
 }
 
+.tournament__container {
+  font-size: 1.5em;
+  font-family: monospace;
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: black;
+  text-align: left;
+  padding-left: 15px;
+  border-radius: 15px;
+  width: 800px;
+  margin: 80px auto;
+  box-shadow: 0 4px 0px #333;
+  background: lightgray;
+}
 
-  /* .main {
-    width: 100%;
-    z-index: -1;
-    margin-bottom: -150px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-} */
+.tournament__name {
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.form__input__tournament {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.input__box {
+  border: 0;
+  border-radius: 10px;
+  width: 300px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.button__input {
+  appearance:none;
+  -webkit-appearance:none;
+  padding: 8px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.button__input:hover {
+  background-color: white;
+  color: black;
+}
+
+.tournament__input__form {
+  font-size: 1.5em;
+  font-family: monospace;
+  font-weight: normal;
+  letter-spacing: 2px;
+  appearance:none;
+  -webkit-appearance:none;
+  padding: 8px;
+  border: none;
+  background-color: lightgrey;
+  color: black;
+  border-radius: 15px;
+  margin-left: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.single__input {
+  padding-bottom: 5px;
+}
+
+.tournament__button__input {
+  font-family: monospace;
+  font-weight: normal;
+  letter-spacing: 2px;
+  appearance:none;
+  -webkit-appearance:none;
+  padding: 8px;
+  border: none;
+  background-color: black;
+  color: white;
+
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.tournament__button__input:hover {
+  background-color: white;
+  color: black;
+}
+

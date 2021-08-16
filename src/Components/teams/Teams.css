@@ -1,3 +1,23 @@
 .div__form {
     text-align: center;
 }
+.team__container {
+    display: flex;
+}
+
+.team__info__container {
+    font-size: 1.5em;
+    font-family: monospace;
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+    width: 600px;
+    margin: 80px auto;
+    box-shadow: 0 4px 0px #333;
+    background: lightgray;
+}
+

@@ -9,18 +9,6 @@ const Home = () => {
             <div className="home__container">
                 <img className="home__image" src={picture} alt=""/>
             </div>
-
-            <div className="home__row" >
-                
-            </div>
-
-            <div className="home__row" >
-                
-            </div>
-
-            <div className="home__row" >
-               
-            </div>
         </div>
     );
 };

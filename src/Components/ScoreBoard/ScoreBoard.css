@@ -24,7 +24,7 @@
     font-weight: normal;
 }
 
-.team {
+.team__scoreboard {
     display: flex;
     font-size: 1.2em;
     border-bottom: solid 2px #444;
@@ -42,6 +42,7 @@
 .team__name {
     flex-grow: 1;
     padding: 20px 10px 10px 10px;
+    color: white
 }
 
 .team__score {
@@ -163,7 +164,7 @@ text-align: left;
   }
 
   .remove__team {
-      /* visibility: hidden; */
+      visibility: hidden;
       margin-right: 10px;
       color: #e57373;
       cursor: pointer;
@@ -174,6 +175,7 @@ text-align: left;
       margin: -5px -10px -5px 10px;
       background: #2f2f2f;
       border-radius: 0 15px 0 0;
+      color: white
   }
 
   .stopwatch__time {
@@ -187,7 +189,7 @@ text-align: left;
     border-radius: 5px;
     padding: 7px 8px;
     border: none;
-    color: #999;
+    color: white;
     letter-spacing: 2px;
     font-weight: bold;
     text-shadow: none;

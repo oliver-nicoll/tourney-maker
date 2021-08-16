@@ -4,35 +4,33 @@ import '../NavBar/NavBar.css';
 import { NavLink, Link } from 'react-router-dom';
 
 
-const NavBar = (props) => {
+const NavBar = () => {
 
     return (
         <div className="navbar">
-            <Link to="/"><img src={ logo } className="navbar-logo" alt="logo" />
+            <Link to="/">
+                <img src={ logo } className="navbar-logo" alt="logo" />
             </Link>
             
             <div className="navbar-header">
                 <div className="navbar-option">
-                    <span className="navbar-optionLineOne">
-                        
-                    </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "black"
+                        color: "black",
+                        textDecoration: 'none'
                     }} 
                     to="/about" 
                     className="navbar-optionLineTwo" >
                        About Us
                     </NavLink>
                 </div>
+                
 
                 <div className="navbar-option">
-                    <span className="navbar-optionLineOne">
-                        
-                    </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "black"
+                        color: "black",
+                        textDecoration: 'none'
                     }} 
                     to="/events" 
                     className="navbar-optionLineTwo">
@@ -41,12 +39,11 @@ const NavBar = (props) => {
                 </div>
 
                 <div className="navbar-option">
-                    <span className="navbar-optionLineOne">
-                       
-                    </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "black"
+                        color: "black",
+                        textDecoration: 'none',
+                        textSize: 1.2
                     }} 
                     to="/teams" 
                     className="navbar-optionLineTwo">
@@ -56,12 +53,10 @@ const NavBar = (props) => {
                 
 
                 <div className="navbar-option">
-                    <span className="navbar-optionLineOne">
-                       
-                    </span>
                     <NavLink activeStyle={{
                         fontWeight: "bold",
-                        color: "black"
+                        color: "black",
+                        textDecoration: 'none'
                     }} 
                     to="/scoreboard" 
                     className="navbar-optionLineTwo">

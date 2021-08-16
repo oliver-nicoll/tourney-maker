@@ -56,7 +56,7 @@ class ScoreBoard extends React.Component {
                                 game={team.game}
                                 key={team.name}
                                 onScoreChange={(delta) => this.onScoreChange(index, delta)}
-                                onRemoveTeam={(index) => this.onRemoveTeam(index)}
+                                onRemoveTeam={() => this.onRemoveTeam(index)}
                                 />
                            );
                         }.bind(this)

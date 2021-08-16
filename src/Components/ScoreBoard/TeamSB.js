@@ -5,7 +5,7 @@ class TeamSB extends React.Component {
    
     render() {
         return (
-            <div className="team">
+            <div className="team__scoreboard">
                 <div className="team__name">
                     <button className="remove__team" onClick={this.props.onRemoveTeam}>✖</button>
                     {this.props.name}
