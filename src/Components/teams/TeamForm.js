@@ -103,7 +103,7 @@ const TeamForm = () => {
     
     return (
         <div className="div__form" >
-            <button type="button" onClick={handleOpen}>
+            <button className="button__team__form" type="button" onClick={handleOpen}>
                 Create Team
             </button>
             <Modal
@@ -113,10 +113,10 @@ const TeamForm = () => {
             aria-describedby="simple-modal-description"
             >
                 <div style={modalStyle} className={classes.paper}>
-                        <form className="form__team" onSubmit={addToList} >
+                        <form className="form__team__modal" onSubmit={addToList} >
                             <input type="text" value={teamName} onChange={handleChange} placeholder="Team Name" /><br></br>
-                            <input type="text" value={captain} onChange={handleChangeCap} placeholder="Team Captain"/>
-                            <input type="submit" value="Create New Team"/>
+                            <input type="text" value={captain} onChange={handleChangeCap} placeholder="Team Captain"/><br></br>
+                            <input className="button__teamform" type="submit" value="Create New Team"/>
                         </form>
                 </div>
             </Modal>   

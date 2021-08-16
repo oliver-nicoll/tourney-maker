@@ -54,7 +54,7 @@ return (
        <h2>Create New Tournament:</h2>   
        <form className="tournament__input__form" onSubmit={handleSubmit}>
             Tournament Name: <input className="single__input a" type="text" value={newEventName} onChange={handleChange} /><br></br><br></br>
-            Tournament Date: <input className="single__input b" type="text" value={newDate} onChange={handleDateChange} /><br></br><br></br>
+            Tournament Date: <input className="single__input b" type="date" value={newDate} onChange={handleDateChange} /><br></br><br></br>
             Tournament Description: <input className="single__input c" type="text" value={newDesc} onChange={handleDescChange} /> <br></br> <br></br>              
             Tournament Host: <input className="single__input d" type="text" value={newHost} onChange={handleHostChange} /> <br></br>               
             <br></br>

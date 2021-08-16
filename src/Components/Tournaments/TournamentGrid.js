@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     gridList: {
-        width: 500,
-        height: 450,
+      width: 600,
+      height: 750
       },
       icon: {
         color: 'rgba(255, 255, 255, 0.54)',
@@ -34,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
         const tournaments = useSelector((state) => {
             return state.tournaments.all
         })
+
+        const checkDate = (date1, date2) => {
+          return new Date(date2) > new Date(date1)
+        }
       
         return (
           <div className={classes.root}>

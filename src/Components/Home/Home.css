@@ -1,7 +1,20 @@
+.title__home {
+    text-align: center;
+    padding: 45px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: auto;
+    align-items: center;
+    display: block;
+    width: 800px;
+}
 .home__image {
     width: 100%;
     position: absolute;
-    top: 0;
+    top: 245px;
     left: 0;
 }
 

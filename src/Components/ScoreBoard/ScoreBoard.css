@@ -1,5 +1,5 @@
 .scoreboard__main {
-    background: #333;
+    background: #2f2f2f;
     width: 700px;
     margin: 70px auto;
     box-shadow: 0 4px 0px #333;
@@ -11,7 +11,7 @@
     text-align: center;
     display: flex;
     align-items: center;
-    background-color: #222;
+    background-color: black;
     border-radius: 15px 15px 0 0;
     border-bottom: solid 2px #444;
     color: white
@@ -114,7 +114,7 @@ text-align: left;
 
 .add__team__form form {
     display: flex;
-    background-color: #222;
+    background-color: black;
     border-radius: 0 0 20px 20px
 }
 
@@ -173,7 +173,7 @@ text-align: left;
   .stopwatch {
       padding: 15px 10px 5px 10px;
       margin: -5px -10px -5px 10px;
-      background: #2f2f2f;
+      background: black;
       border-radius: 0 15px 0 0;
       color: white
   }
@@ -207,5 +207,5 @@ text-align: left;
     margin: 0;
     font-weight: normal;
     letter-spacing: 2px;
-    color: #666;
+    color: white;
   }

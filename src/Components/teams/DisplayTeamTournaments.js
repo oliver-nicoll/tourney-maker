@@ -12,15 +12,17 @@ const DisplayTeamTournaments = () => {
     return (
         
         <div>
-            {tournament.teams && (tournament.teams.length <= 8 || tournament.teams.length >= 0 ?
+            {tournament.teams ? 
                 <div className="tournamentteams__container">
                     Teams:
+                        {tournament.teams.length <= 8 || tournament.teams.length >= 0 ?
                     
-                        <div>
-                            {tournament.teams.map((t, i) => <div key={t.id}> <br />{i + 1}. {t.team_name} </div>)} 
-                        </div>
+                            <div>
+                                {tournament.teams.map((t, i) => <div key={t.id}> <br />{i + 1}. {t.team_name} </div>)} 
+                            </div>
+                        : "Teams aren't signed up yet - Join today!"}
                 </div>
-            : "Teams aren't signed up yet - Join today!")}
+            : ""}
         </div>
     )
 }

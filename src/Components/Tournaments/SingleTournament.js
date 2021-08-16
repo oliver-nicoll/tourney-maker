@@ -56,35 +56,36 @@ const SingleTournament = () => {
     return(
         <div>
             {tournament ?
-            <div className="tournament__container">
-                <div className="tournament__name">
-                    {tournament.tourney_name }
+                <div className="tournament__container">
+                    <div className="tournament__name">
+                        {tournament.tourney_name }
+                    </div>
+                    <div className="tournament__info">
+                        Date: {tournament.date}<br></br><br></br>
+                        Host:{tournament.host}<br></br><br></br>
+                        Description: {tournament.description}
+                    </div><br></br>
+                    <div>
+                        <DisplayTeamTournaments />
+                    </div>
+                {tournament.teams ? 
+                    <div className="form__container__team">
+                        <br/><br/>
+                        <br/><br/>
+                        {tournament.teams.length < 8  ?
+                            <form className="form__input__tournament" onSubmit={handleSubmit}>
+                                <input className="input__box" list="add__team" value={teamPick} onChange={handleOnChange} />
+                                    <datalist id="add__team">
+                                            {teams.map((t, i) => 
+                                                <option key={i} value={t.id}>{t.team_name}</option>)} 
+                                    </datalist>
+                                <input className="button__input" type="submit" value="Add Team"/>
+                            </form>   
+                        : "Slots are filled"
+                        } 
+                    </div>
+                    : "Please Try again later."}
                 </div>
-                <div className="tournament__info">
-                    Date: {tournament.date}<br></br><br></br>
-                    Host:{tournament.host}<br></br><br></br>
-                    Description: {tournament.description}
-                </div><br></br>
-                <div>
-                    <DisplayTeamTournaments />
-                </div>
-
-                <div className="form__container__team">
-                    <br/><br/>
-                    <br/><br/>
-                    {tournament.teams && (tournament.teams.length < 8  ?
-                        <form className="form__input__tournament" onSubmit={handleSubmit}>
-                            <input className="input__box" list="add__team" value={teamPick} onChange={handleOnChange} />
-                                <datalist id="add__team">
-                                        {teams.map((t, i) => 
-                                            <option key={i} value={t.id}>{t.team_name}</option>)} 
-                                </datalist>
-                            <input className="button__input" type="submit" value="Add Team"/>
-                        </form>   
-                        : "Slots are filled")
-                    } 
-                </div>
-            </div>
             : "Tournament not Found"}
         </div>
     )
